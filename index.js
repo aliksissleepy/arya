@@ -1,10 +1,19 @@
 const discord = require("discord.js");
 const fs = require("fs");
 const db = require("quick.db");
+var express = require("express");
+var app = express();
 const { isBuffer } = require("util");
 const bot = new discord.Client();
 bot.login(process.env.tkn);
 bot.commands = new discord.Collection();
+app.set("port", (process.env.PORT || 5000));
+app.get("/", function(request, response) {
+    var result = "Running"
+    response.send(result);
+}).listen(app.get("port"), function() {
+    console.log("Running on port; ", app.get('port'));
+});
 
 bot.on("ready", () => {
     console.log("Logged in.");
