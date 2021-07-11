@@ -55,7 +55,7 @@ module.exports = {
         var modcommands = "";
         var musiccommands = "";
         var ecocommands = "";
-        const prefix = db.fetch(`prefix_${message.guild.id}`);
+        const prefix = db.fetch(`prefix_${message.guild.id}`) || ";";
 
         function makelist(lis, set){
             lis.forEach(cmd => {
