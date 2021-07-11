@@ -15,6 +15,16 @@ app.get("/", function(request, response) {
     console.log("Running on port; ", app.get('port'));
 });
 
+bot.funcs = {
+    getperm: function(member, perm){
+        if(!member.hasPermission(perm)){
+            return false;
+        }else{
+            return true;
+        };
+    }
+};
+
 bot.on("ready", () => {
     console.log("Logged in.");
     bot.user.setPresence({activity: {name: "ur server :p", type: "WATCHING"}, status: "dnd"});
