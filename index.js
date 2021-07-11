@@ -54,7 +54,7 @@ bot.on("message", async msg => {
 
     const rawCmd = bot.commands.get(cmd.slice(prefix.length));
 
-    if(rawcmd){
-        rawcmd.run(bot, msg, args, db);
+    if(rawCmd){
+        rawCmd.run(bot, msg, args, db);
     };
 })
