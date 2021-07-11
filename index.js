@@ -27,7 +27,17 @@ bot.funcs = {
 
 bot.on("ready", () => {
     console.log("Logged in.");
+    var currSet = 0
     bot.user.setPresence({activity: {name: "ur server :p", type: "WATCHING"}, status: "dnd"});
+    setTimeout(() => {
+        if(currSet == 0){
+            bot.user.setPresence({activity: {name: "ur server :p", type: "WATCHING"}, status: "dnd"});
+            currSet = 1;
+        }else{
+            bot.user.setPresence({activity: {name: "my commands :p", type: "WATCHING"}, status: "dnd"});
+            currSet = 0;
+        };
+    }, 300000);
 });
 
 fs.readdir("./cmds", (err, files) => {
