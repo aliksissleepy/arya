@@ -98,7 +98,7 @@ module.exports = {
             const embed = new discord.MessageEmbed()
             .setTitle(title)
             .setAuthor("arya", "https://i.imgur.com/5JLdW1g.png")
-            .setDescription(`Type \`${db.fetch(`prefix_${message.guild.id}`)}help\` to get a list of the other command categories. If you need any support join our discord here: https://discord.gg/fRFXB4f\n\nIf an argument is displayed \`**[arg]**\` it is vital to the comand, arguments displayed \`*[arg]*\` are optional.`)
+            .setDescription(`Type \`${db.fetch(`prefix_${message.guild.id}`) || ";"}help\` to get a list of the other command categories. If you need any support join our discord here: https://discord.gg/fRFXB4f\n\nIf an argument is displayed \`**[arg]**\` it is vital to the comand, arguments displayed \`*[arg]*\` are optional.`)
             .addField("Commands:", "\u200b")
             .setThumbnail(gif)
 
