@@ -1,0 +1,10 @@
+{
+    "dependencies": {
+      "@discordjs/opus": "^0.3.3",
+      "discord.js": "^12.4.1",
+      "fs": "^0.0.1-security",
+      "node-fetch": "^2.6.1",
+      "quick.db": "^7.1.3"
+    }
+  }
+  
