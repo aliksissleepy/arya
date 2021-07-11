@@ -3,6 +3,7 @@
     "discord.js": "^12.5.3",
     "express": "^4.17.1",
     "fs": "^0.0.1-security",
+    "pg": "^8.6.0",
     "quick.db": "^7.1.3"
   },
   "scripts": {

@@ -2,6 +2,15 @@ const discord = require("discord.js");
 const fs = require("fs");
 const db = require("quick.db");
 var express = require("express");
+const {Client} = require("pg");
+const client = new Client();
+client.connect()
+
+client.query('SELECT $1::text as message', ['Hello world!'], (err, res) => {
+    console.log(err ? err.stack : res.rows[0].message)
+    client.end()
+})
+
 var app = express();
 const { isBuffer } = require("util");
 const bot = new discord.Client();
