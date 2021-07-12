@@ -27,7 +27,7 @@ bot.funcs = {
 
 bot.on("ready", () => {
     console.log("Logged in.");
-    var currSet = 0
+    var currSet = 0;
     bot.user.setPresence({activity: {name: "ur server :p", type: "WATCHING"}, status: "dnd"});
     setInterval(() => {
         if(currSet == 0){
@@ -77,7 +77,7 @@ bot.on("message", async msg => {
                 if(v == `${msg.guild.id}_${msg.author.id}`){
                     cmdList.splice(cmdList.indexOf(v), 1);
                 };
-            })
+            });
         }, 1000);
     };
 
