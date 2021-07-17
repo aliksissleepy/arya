@@ -19,12 +19,17 @@ module.exports = {
     name: "reportclothing",
     category: "Hail",
     description: "Reports stolen clothing to mods.",
-    usecase: "reportclothing **[link]**",
+    usecase: "reportclothing **[link]** **[ourlink]**",
 	run: async(bot, message, args, db, prefix) => {
         if(message.guild.id != "837766482875121684") return;
         const link = args[0];
+        const ourlink = args[1];
         if(!isRblxLink(link)){
-            message.channel.send(`Sorry, you must provide a valid roblox link in the format \`${prefix}reportclothing https://www.roblox.com/catalog/ID\`.`)
+            message.channel.send(`Sorry, you must provide a valid roblox link in the format \`${prefix}reportclothing https://www.roblox.com/catalog/ID https://www.roblox.com/catalog/ID\`.`)
+            return;
+        };
+        if(!isRblxLink(ourlink)){
+            message.channel.send(`Sorry, you must provide a valid roblox link in the format \`${prefix}reportclothing https://www.roblox.com/catalog/ID https://www.roblox.com/catalog/ID\`.`)
             return;
         };
         message.channel.send("Thank you for your report, this will be looked into by our moderation team!")
@@ -38,7 +43,8 @@ module.exports = {
         .setColor("#912937")
         .setTitle(`New report from [${message.author.id}]`)
         .addFields(
-            {name: "Link", value: link}, 
+            {name: "Link", value: link},
+            {name: "Item copied", value: ourlink},
             {name: "Name", value: itmName}, 
             {name: "Author", value: itmAuthor}
         )
