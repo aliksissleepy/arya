@@ -1,6 +1,7 @@
 const xmlh = require("xmlhttprequest");
 var DomParser = require('dom-parser');
 var parser = new DomParser();
+const discord = require("discord.js");
 
 function isRblxLink(string){
     if(!string.includes("https://www.roblox.com/catalog/")) return false;
@@ -20,7 +21,7 @@ module.exports = {
     description: "Reports stolen clothing to mods.",
     usecase: "reportclothing **[link]**",
 	run: async(bot, message, args, db, prefix) => {
-        if(!message.guild.id === "837766482875121684") return;
+        if(!message.guild.id == "837766482875121684") return;
         const link = args[0];
         if(!isRblxLink(link)){
             message.channel.send(`Sorry, you must provide a valid roblox link in the format \`${prefix}reportclothing https://www.roblox.com/catalog/ID\`.`)
@@ -32,11 +33,14 @@ module.exports = {
         var lns = nameItm[0].textContent.split("\n");
         var itmName = lns[1];
         var itmAuthor = lns[4];
-        var dateItm = xml.getElementsByAttribute("class", "date-time-i18n");
-        console.log(dateItm[0].innerHTML)
         
-        //var datelns = dateItm[0].textContent.split("\n");
-        //var itmDate = datelns[0]
-        //console.log(datelns[0] + "\n" + datelns[1]);
+        const report = new discord.MessageEmbed()
+        .setColor("#912937")
+        .setTitle(`New report from [${message.author.id}]`)
+        .addFields({name: "Link", value: link}, {name: "Name", itmName}, {name: "Author", itmAuthor})
+        .setTimestamp()
+        .setFooter("Reported for DMCA");
+
+        bot.guilds.cache.get("846096237941489686").channels.cache.get("866003201748369458").send(report);
     },
 };
