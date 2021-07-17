@@ -37,7 +37,11 @@ module.exports = {
         const report = new discord.MessageEmbed()
         .setColor("#912937")
         .setTitle(`New report from [${message.author.id}]`)
-        .addFields({name: "Link", value: link}, {name: "Name", itmName}, {name: "Author", itmAuthor})
+        .addFields(
+            {name: "Link", value: link}, 
+            {name: "Name", value: itmName}, 
+            {name: "Author", value: itmAuthor}
+        )
         .setTimestamp()
         .setFooter("Reported for DMCA");
 
