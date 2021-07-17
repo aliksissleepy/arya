@@ -1,5 +1,5 @@
 const xmlh = require("xmlhttprequest");
-const DOMParser = require("dom-parser");
+var DOMParser = require("dom-parser");
 
 function isRblxLink(string){
     if(!string.includes("https://www.roblox.com/catalog/")) return false;
@@ -7,8 +7,8 @@ function isRblxLink(string){
 };
 
 ​function parseXML(text){
-    parser = new DOMParser();
-    doc = parser.parseFromString(text, "text/xml");
+    var parser = new DOMParser();
+    var doc = parser.parseFromString(text, "text/xml");
     return doc;
 };
 
