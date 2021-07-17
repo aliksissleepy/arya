@@ -22,6 +22,9 @@ module.exports = {
     usecase: "reportclothing **[link]** **[ourlink]**",
 	run: async(bot, message, args, db, prefix) => {
         if(message.guild.id != "837766482875121684") return;
+        if(!args[0]) return message.channel.send(`Sorry, you must provide a valid roblox link in the format \`${prefix}reportclothing https://www.roblox.com/catalog/ID https://www.roblox.com/catalog/ID\`.`);
+        if(!args[1]) return message.channel.send(`Sorry, you must provide a valid roblox link in the format \`${prefix}reportclothing https://www.roblox.com/catalog/ID https://www.roblox.com/catalog/ID\`.`);
+        
         const link = args[0];
         const ourlink = args[1];
         if(!isRblxLink(link)){
