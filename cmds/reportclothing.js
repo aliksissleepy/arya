@@ -6,7 +6,7 @@ function isRblxLink(string){
 };
 
 function httpGet(theUrl){
-    var xmlHttp = new XMLHttpRequest();
+    var xmlHttp = new XMLHttpRequest.XMLHttpRequest();
     xmlHttp.open( "GET", theUrl, false );
     xmlHttp.send( null );
     return xmlHttp.responseText;
