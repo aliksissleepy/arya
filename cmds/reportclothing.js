@@ -26,14 +26,15 @@ module.exports = {
             message.channel.send(`Sorry, you must provide a valid roblox link in the format \`${prefix}reportclothing https://www.roblox.com/catalog/ID\`.`)
             return;
         };
+        message.channel.send("Thank you for your report, this will be looked into by our moderation team!")
         const xml = parser.parseFromString(httpGet(link));
-        const itm = xml.getElementsByClassName("border-bottom item-name-container");
-        console.log("start")
-        console.log(itm[0].textContent);
-        console.log("end")
-        var lns = itm[0].textContent.split("\n");
-        console.log("1: " + lns[0]);
-        console.log("2: " + lns[1]);
-        console.log("3: " + lns[2]);
+        const nameItm = xml.getElementsByClassName("border-bottom item-name-container");
+        var lns = nameItm[0].textContent.split("\n");
+        var itmName = lns[1];
+        var itmAuthor = lns[4];
+        var dateItm = xml.getElementsByClassName("date-time-i18n");
+        var datelns = dateItm[0].textContent.split("\n");
+        var itmDate = datelns[0]
+        console.log(datelns[0] + "\n" + datelns[1]);
     },
 };
