@@ -14,6 +14,12 @@ function httpGet(theUrl){
     return xmlHttp.responseText;
 };
 
+function getFirstLine(text){
+    var index = text.indexOf("\n");
+    if (index === -1) index = undefined;
+    return text.substring(0, index);
+};
+
 module.exports = {
     name: "reportclothing",
     category: "Hail",
@@ -28,9 +34,7 @@ module.exports = {
         };
         const xml = parser.parseFromString(httpGet(link));
         const itm = xml.getElementsByClassName("border-bottom item-name-container");
-        console.log(itm[0].getElementsByTagName('h2')[0]);
-        console.log(itm[0].textContent);
-        console.log(itm[0].getElementsByTagName('h2')[0].textContext);
+        console.log(getFirstLine(itm[0].textContent));
 
         console.log(xml.getElementsByTagName("item-container"));
     },
