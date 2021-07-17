@@ -1,3 +1,5 @@
+require("xmlhttprequest");
+
 function isRblxLink(string){
     if(!string.includes("https://www.roblox.com/catalog/")) return false;
     return true;
