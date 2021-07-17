@@ -1,4 +1,8 @@
 function isRblxLink(string){
+    if(string.includes("https://www.roblox.com/catalog/")){
+        console.log("match");
+        console.log(string.includes("https://www.roblox.com/catalog/"));
+    }
     if(!string.includes("https://www.roblox.com/catalog/") || !string.includes("http://www.roblox.com/catalog/")) return false;
   
     return true;
