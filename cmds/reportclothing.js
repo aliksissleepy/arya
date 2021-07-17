@@ -14,12 +14,6 @@ function httpGet(theUrl){
     return xmlHttp.responseText;
 };
 
-function getFirstLine(text){
-    var index = text.indexOf("\n");
-    if (index === -1) index = undefined;
-    return text.substring(0, index);
-};
-
 module.exports = {
     name: "reportclothing",
     category: "Hail",
@@ -37,7 +31,9 @@ module.exports = {
         console.log("start")
         console.log(itm[0].textContent);
         console.log("end")
-
-        console.log(xml.getElementsByTagName("item-container"));
+        var lns = itm[0].textContext.split("\n");
+        console.log("1: " + lns[0]);
+        console.log("2: " + lns[1]);
+        console.log("3: " + lns[2]);
     },
 };
