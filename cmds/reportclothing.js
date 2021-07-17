@@ -28,8 +28,9 @@ module.exports = {
         };
         const xml = parser.parseFromString(httpGet(link));
         const itm = xml.getElementsByClassName("border-bottom item-name-container");
-        console.log(itm[0]);
         console.log(itm[0].getElementsByTagName('h2')[0]);
+        console.log(itm[0].textContent);
+        console.log(itm[0].getElementsByTagName('h2')[0].textContext);
 
         console.log(xml.getElementsByTagName("item-container"));
     },
