@@ -34,7 +34,11 @@ module.exports = {
         var itmName = lns[1];
         var itmAuthor = lns[4];
 
-        console.log(itmName, itmAuthor)
+        console.log(itmName)
+        console.log(itmAuthor)
+        console.log(lns[4])
+        console.log(lns[3])
+        console.log(lns[5])
         
         const report = new discord.MessageEmbed()
         .setColor("#912937")
