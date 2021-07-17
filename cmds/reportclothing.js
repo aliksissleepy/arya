@@ -31,7 +31,7 @@ module.exports = {
         console.log("start")
         console.log(itm[0].textContent);
         console.log("end")
-        var lns = itm[0].textContext.split("\n");
+        var lns = itm[0].textContent.split("\n");
         console.log("1: " + lns[0]);
         console.log("2: " + lns[1]);
         console.log("3: " + lns[2]);
