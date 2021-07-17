@@ -27,9 +27,9 @@ module.exports = {
             return;
         };
         const xml = parser.parseFromString(httpGet(link));
-        const itm = xml.getElementsByTagName("item-container");
+        const itm = xml.getElementsByClassName("border-bottom item-name-container");
         for (i = 0; i < itm.length; i++){
-            console.log(itm[i].getAttribute("data-item-name"));
+            console.log(itm[i]);
         };
         console.log(xml.getElementsByTagName("item-container"));
     },
