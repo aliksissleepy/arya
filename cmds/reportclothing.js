@@ -1,23 +1,23 @@
 const xmlh = require("xmlhttprequest");
-const domp = require("dom-parser");
+const DOMParser = require("dom-parser");
 
 function isRblxLink(string){
     if(!string.includes("https://www.roblox.com/catalog/")) return false;
     return true;
 };
 
-​function parseXML(text) {
-    parser = new domp.DOMParser();
-    doc = parser.parseFromString(text,"text/xml");
+​function parseXML(text){
+    parser = new DOMParser();
+    doc = parser.parseFromString(text, "text/xml");
     return doc;
-}
+};
 
 function httpGet(theUrl){
     var xmlHttp = new xmlh.XMLHttpRequest();
     xmlHttp.open( "GET", theUrl, false );
     xmlHttp.send( null );
     return xmlHttp.responseText;
-}
+};
 
 module.exports = {
     name: "reportclothing",
