@@ -32,8 +32,8 @@ module.exports = {
         var lns = nameItm[0].textContent.split("\n");
         var itmName = lns[1];
         var itmAuthor = lns[4];
-        var dateItm = xml.querySelector("class[date-time-i18n]");
-        console.log(dateItm.querySelector("span").innerHTML)
+        var dateItm = xml.getElementsByAttribute("class", "date-time-i18n");
+        console.log(dateItm[0].innerHTML)
         
         //var datelns = dateItm[0].textContent.split("\n");
         //var itmDate = datelns[0]
