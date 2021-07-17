@@ -1,6 +1,6 @@
 function isRblxLink(string){
-    if(!string.includes("https://www.roblox.com/catalog/") || !string.includes("http://www.roblox.com/catalog/")) return false;
-  
+    if(!string.includes("https://www.roblox.com/catalog/")) return false;
+    if(!string.includes("http://www.roblox.com/catalog/")) return false;
     return true;
 };
 
@@ -19,7 +19,7 @@ module.exports = {
 	run: async(bot, message, args, db, prefix) => {
         if(!message.guild.id === "837766482875121684") return;
         const link = args[0];
-        if(isRblxLink(link) == false){
+        if(!isRblxLink(link)){
             message.channel.send(`Sorry, you must provide a valid roblox link in the format \`${prefix}reportclothing https://www.roblox.com/catalog/ID\`.`)
             return;
         };
