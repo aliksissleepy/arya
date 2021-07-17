@@ -8,7 +8,7 @@ function isRblxLink(string){
 };
 
 ​function parseXML(text){
-    var doc = parser.parseFromString(text, "text/xml");
+    var doc = parser.parseFromString(text);
     return doc;
 };
 
