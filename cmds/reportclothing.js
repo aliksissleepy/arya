@@ -27,7 +27,7 @@ module.exports = {
             return;
         };
         const xml = parser.parseFromString(httpGet(link));
-        console.log(xml.getElementsByTagName("item-container"));
+        console.log(xml.getElementsByTagName("item-container").getAttribute("data-item-name"));
         console.log(xml.getElementsByTagName("item-container")["data-item-name"]);
     },
 };
