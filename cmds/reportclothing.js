@@ -33,8 +33,10 @@ module.exports = {
         var itmName = lns[1];
         var itmAuthor = lns[4];
         var dateItm = xml.getElementsByClassName("date-time-i18n");
-        var datelns = dateItm[0].textContent.split("\n");
-        var itmDate = datelns[0]
-        console.log(datelns[0] + "\n" + datelns[1]);
+        console.log(dateItm[0])
+        console.log(dateItm[1])
+        //var datelns = dateItm[0].textContent.split("\n");
+        //var itmDate = datelns[0]
+        //console.log(datelns[0] + "\n" + datelns[1]);
     },
 };
