@@ -7,13 +7,10 @@ const { isBuffer } = require("util");
 const bot = new discord.Client();
 bot.login(process.env.tkn);
 bot.commands = new discord.Collection();
-app.set("port", (process.env.PORT || 5000));
-app.get("/", function(request, response) {
-    var result = "Running"
-    response.send(result);
-}).listen(app.get("port"), function() {
-    console.log("Running on port; ", app.get('port'));
-});
+var http = require("http");
+setInterval(function() {
+    http.get("https://arya-discord.herokuapp.com/");
+}, 300000);
 
 bot.funcs = {
     getperm: function(member, perm){
