@@ -20,7 +20,7 @@ module.exports = {
         if(!message.guild.id === "837766482875121684") return;
         const link = args[0];
         if(!isRblxLink(link)){
-            message.channel.send(`Sorry, you must provide a valid roblox link in the format \`${prefix}reportclothing https://roblox.com/catalog/ID\`.`)
+            message.channel.send(`Sorry, you must provide a valid roblox link in the format \`${prefix}reportclothing https://www.roblox.com/catalog/ID\`.`)
             return;
         };
         console.log(httpGet(link));
