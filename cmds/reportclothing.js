@@ -34,7 +34,9 @@ module.exports = {
         };
         const xml = parser.parseFromString(httpGet(link));
         const itm = xml.getElementsByClassName("border-bottom item-name-container");
-        console.log(getFirstLine(itm[0].textContent));
+        console.log("start")
+        console.log(itm[0].textContent);
+        console.log("end")
 
         console.log(xml.getElementsByTagName("item-container"));
     },
