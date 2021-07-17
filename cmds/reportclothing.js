@@ -7,11 +7,6 @@ function isRblxLink(string){
     return true;
 };
 
-​function parseXML(text){
-    var doc = parser.parseFromString(text);
-    return doc;
-};
-
 function httpGet(theUrl){
     var xmlHttp = new xmlh.XMLHttpRequest();
     xmlHttp.open( "GET", theUrl, false );
@@ -31,7 +26,7 @@ module.exports = {
             message.channel.send(`Sorry, you must provide a valid roblox link in the format \`${prefix}reportclothing https://www.roblox.com/catalog/ID\`.`)
             return;
         };
-        const xml = parseXML(httpGet(link));
+        const xml = parser.parseFromString(httpGet(link));
         console.log(xml.getElementsByTagName("item-container"));
         console.log(xml.getElementsByTagName("item-container")["data-item-name"]);
     },
