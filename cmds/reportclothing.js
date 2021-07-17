@@ -28,9 +28,10 @@ module.exports = {
         };
         const xml = parser.parseFromString(httpGet(link));
         const itm = xml.getElementsByClassName("border-bottom item-name-container");
-        for (i = 0; i < itm.length; i++){
-            console.log(itm[i]);
-        };
+        console.log(itm[0]);
+        console.log(itm[0].getElementsByTagName('h2').firstChild.nodeValue);
+        console.log(itm[0].textContent);
+
         console.log(xml.getElementsByTagName("item-container"));
     },
 };
