@@ -1,10 +1,4 @@
 function isRblxLink(string){
-    var url;
-    try {
-        url = new URL(string);
-    } catch (_) {
-        return false;  
-    }
     if(!string.includes("https://roblox.com/catalog/") || !string.includes("http://roblox.com/catalog/")) return false;
   
     return true;
