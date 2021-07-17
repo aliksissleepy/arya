@@ -15,13 +15,6 @@ app.get("/", function(request, response) {
     console.log("Running on port; ", app.get('port'));
 });
 
-const PORT = process.env.PORT || 3000;
-const INDEX = '/home.html';
-
-const server = express()
-  .use((req, res) => res.sendFile(INDEX, { root: __dirname }))
-  .listen(PORT, () => console.log(`Listening on ${PORT}`));
-
 bot.funcs = {
     getperm: function(member, perm){
         if(!member.hasPermission(perm)){
