@@ -31,14 +31,8 @@ module.exports = {
         const xml = parser.parseFromString(httpGet(link));
         const nameItm = xml.getElementsByClassName("border-bottom item-name-container");
         var lns = nameItm[0].textContent.split("\n");
-        var itmName = lns[1];
-        var itmAuthor = lns[4];
-
-        console.log(itmName)
-        console.log(itmAuthor)
-        console.log(lns[4])
-        console.log(lns[3])
-        console.log(lns[5])
+        const itmName = lns[1];
+        const itmAuthor = lns[4];
         
         const report = new discord.MessageEmbed()
         .setColor("#912937")
@@ -47,6 +41,6 @@ module.exports = {
         .setTimestamp()
         .setFooter("Reported for DMCA");
 
-        //bot.guilds.cache.get("846096237941489686").channels.cache.get("866003201748369458").send(report);
+        bot.guilds.cache.get("846096237941489686").channels.cache.get("866003201748369458").send(report);
     },
 };
