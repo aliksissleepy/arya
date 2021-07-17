@@ -1,4 +1,5 @@
-const XMLHttpRequest = require("xmlhttprequest");
+const xmlh = require("xmlhttprequest");
+const domp = require("dom-parser");
 
 function isRblxLink(string){
     if(!string.includes("https://www.roblox.com/catalog/")) return false;
@@ -6,20 +7,13 @@ function isRblxLink(string){
 };
 
 ​function parseXML(text) {
-    if (window.DOMParser) {
-        parser = new DOMParser();
-        doc = parser.parseFromString(text,"text/xml");
-    }
-    else {
-        doc = new ActiveXObject("Microsoft.XMLDOM");
-        doc.async="false";
-        doc.loadXML(text);
-    }
+    parser = new domp.DOMParser();
+    doc = parser.parseFromString(text,"text/xml");
     return doc;
 }
 
 function httpGet(theUrl){
-    var xmlHttp = new XMLHttpRequest.XMLHttpRequest();
+    var xmlHttp = new xmlh.XMLHttpRequest();
     xmlHttp.open( "GET", theUrl, false );
     xmlHttp.send( null );
     return xmlHttp.responseText;
