@@ -32,7 +32,7 @@ module.exports = {
         var lns = nameItm[0].textContent.split("\n");
         var itmName = lns[1];
         var itmAuthor = lns[4];
-        var dateItm = xml.getElementsByClass("date-time-i18n");
+        var dateItm = xml.getElementsByClassName("date-time-i18n");
         var datelns = dateItm[0].textContent.split("\n");
         var itmDate = datelns[0]
         console.log(datelns[0] + "\n" + datelns[1]);
