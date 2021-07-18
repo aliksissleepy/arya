@@ -13,6 +13,8 @@ bot.commands = new discord.Collection();
 app.set("port", (process.env.PORT || 5000));
 app.set("view engine", "ejs");
 
+app.set('views', __dirname + '/web');
+
 app.get("/", function(request, response){
     //response.sendFile(__dirname + '/web/index.html');
     var totalSeconds = (bot.uptime / 1000);
@@ -22,7 +24,7 @@ app.get("/", function(request, response){
     totalSeconds %= 3600;
     var m = Math.floor(totalSeconds / 60);
     var s = Math.floor(totalSeconds % 60);
-    response.render("web/index", {botruntime: `${d}d, ${h}h, ${m}m, ${s}s`})
+    response.render("index", {botruntime: `${d}d, ${h}h, ${m}m, ${s}s`})
 }).listen(app.get("port"), function() {
     console.log("Running on port; ", app.get('port'));
 });
