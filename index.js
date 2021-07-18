@@ -10,7 +10,7 @@ bot.commands = new discord.Collection();
 app.set("port", (process.env.PORT || 5000));
 app.get("/", function(request, response) {
     var result = "Running"
-    response.sendFile("./web/index.html");
+    response.sendFile(__dirname + '/web/index.html');
 }).listen(app.get("port"), function() {
     console.log("Running on port; ", app.get('port'));
 });
