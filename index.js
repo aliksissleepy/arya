@@ -24,7 +24,7 @@ app.get("/", function(request, response){
     totalSeconds %= 3600;
     var m = Math.floor(totalSeconds / 60);
     var s = Math.floor(totalSeconds % 60);
-    response.render("index", {botruntime: `${d}d, ${h}h, ${m}m, ${s}s`})
+    response.render("index.html", {botruntime: `${d}d, ${h}h, ${m}m, ${s}s`})
 }).listen(app.get("port"), function() {
     console.log("Running on port; ", app.get('port'));
 });
