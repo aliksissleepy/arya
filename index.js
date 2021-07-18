@@ -31,7 +31,7 @@ app.get("/", function(request, response){
 
 var http = require("http");
 setInterval(function() {
-    http.get("https://arya-discord.herokuapp.com/");
+    http.get("http://arya-discord.herokuapp.com/");
 }, 300000);
 
 bot.funcs = {
