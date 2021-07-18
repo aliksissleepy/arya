@@ -22,8 +22,8 @@
     <h1 style="text-align: center;">The bot has been running for:</h1>
     <p id = "runtime" style="text-align: center;"><%= botruntime %></p>
     <script>
-        const {uptime} = require("../index.js");
         setInterval(() => {
+            const {uptime} = require("../index.js");
             document.getElementById("runtime").innerHTML = uptime.up;
         }, 1000);
     </script>

@@ -26,13 +26,11 @@ setInterval(() => {
     var m = Math.floor(totalSeconds / 60);
     var s = Math.floor(totalSeconds % 60);
     uptime = `${d}d, ${h}h, ${m}m, ${s}s`;
+    var Time = {
+        up: uptime
+    }
+    module.exports = {Time};
 }, 1000);
-
-
-var Time = {
-    up: uptime
-};
-module.exports = {Time};
 
 app.get("/", function(request, response){
     response.render("index", {botruntime: uptime})
