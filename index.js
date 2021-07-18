@@ -15,9 +15,7 @@ app.set("view engine", "ejs");
 
 app.set('views', __dirname + '/web/');
 
-var uptime = "0d 0h 0m 0s";
-
-setInterval(() => {
+app.get("/", function(request, response){
     var totalSeconds = (bot.uptime / 1000);
     var d = Math.floor(totalSeconds / 86400);
     totalSeconds %= 86400;
@@ -26,14 +24,10 @@ setInterval(() => {
     var m = Math.floor(totalSeconds / 60);
     var s = Math.floor(totalSeconds % 60);
     uptime = `${d}d, ${h}h, ${m}m, ${s}s`;
-    var Time = {
-        up: uptime
-    }
-    module.exports = {Time};
-}, 1000);
-
-app.get("/", function(request, response){
     response.render("index", {botruntime: uptime})
+    setInterval(() => {
+        response.update('runtime', 'index', {botruntime: uptime});
+    }, 1000);
 }).listen(app.get("port"), function() {
     console.log("Running on port; ", app.get('port'));
 });

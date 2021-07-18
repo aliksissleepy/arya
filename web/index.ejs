@@ -21,12 +21,6 @@
 <body style="background-color: #141414;">
     <h1 style="text-align: center;">The bot has been running for:</h1>
     <p id = "runtime" style="text-align: center;"><%= botruntime %></p>
-    <script>
-        setInterval(() => {
-            const {uptime} = require("../index.js");
-            document.getElementById("runtime").innerHTML = uptime.up;
-        }, 1000);
-    </script>
     <br>
     <p style="font-family: Monaco; text-align: center;">
         <a href="https://discord.com/api/oauth2/authorize?client_id=863594718565892107&permissions=8&scope=bot">Invite arya now!</a>
