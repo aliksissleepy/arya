@@ -13,7 +13,7 @@ bot.commands = new discord.Collection();
 app.set("port", (process.env.PORT || 5000));
 app.set("view engine", "ejs");
 
-app.set('views', __dirname + '/web');
+app.set('views', __dirname + '/web/');
 
 app.get("/", function(request, response){
     //response.sendFile(__dirname + '/web/index.html');
