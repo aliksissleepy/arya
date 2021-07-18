@@ -22,9 +22,10 @@
     <h1 style="text-align: center;">The bot has been running for:</h1>
     <p id = "runtime" style="text-align: center;"><%= botruntime %></p>
     <script>
+        const {uptime} = require("../index.js");
         setInterval(() => {
-            document.getElementById("runtime").innerHTML = "<%= botruntime %>";
-        },1000)
+            document.getElementById("runtime").innerHTML = uptime.up;
+        }, 1000);
     </script>
     <br>
     <p style="font-family: Monaco; text-align: center;">
