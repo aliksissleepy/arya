@@ -26,7 +26,7 @@ app.get("/", function(request, response){
     uptime = `${d}d, ${h}h, ${m}m, ${s}s`;
     response.render("index", {botruntime: uptime})
     setInterval(() => {
-        response.update('runtime', 'index', {botruntime: uptime});
+        var f = new ejs({url: 'index'}).update('runtime', {botruntime: uptime});
     }, 1000);
 }).listen(app.get("port"), function() {
     console.log("Running on port; ", app.get('port'));
